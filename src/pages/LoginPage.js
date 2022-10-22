@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom";
 import "../stylesheets/loginpage.css";
+import LandingPage from '../pages/LandingPage.js'
 
 
 // We need to setup the database to mutable with useState so that when a user creates a new account, it will mutate the database
@@ -67,6 +68,8 @@ function App() {
 
   // JSX code for login form
   const renderForm = (
+    <div className="title">
+    Sign in
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
@@ -84,13 +87,16 @@ function App() {
         </div>
       </form>
     </div>
+    </div>
   );
 
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? 
+          <div className="landing-page">
+        <LandingPage/>
+          </div> : renderForm}
       </div>
     </div>
   );
