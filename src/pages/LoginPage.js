@@ -68,36 +68,35 @@ function App() {
 
   // JSX code for login form
   const renderForm = (
-    <div className="title">
-    Sign in
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
+    <div className="app">
+      <div className="login-form">
+        <div className="title">
+          Sign in
+          <div className="form">
+            <form onSubmit={handleSubmit}>
+              <div className="input-container">
+                <label>Username </label>
+                <input type="text" name="uname" required />
+                {renderErrorMessage("uname")}
+              </div>
+              <div className="input-container">
+                <label>Password </label>
+                <input type="password" name="pass" required />
+                {renderErrorMessage("pass")}
+              </div>
+              <div className="button-container">
+                <input type="submit" />
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-      </form>
-    </div>
+      </div>
     </div>
   );
 
   return (
-    <div className="app">
-      <div className="login-form">
-        {isSubmitted ? 
-          <div className="landing-page">
-        <LandingPage/>
-          </div> : renderForm}
-      </div>
+    <div>
+        {isSubmitted ? <LandingPage/> : renderForm}
     </div>
   );
 }

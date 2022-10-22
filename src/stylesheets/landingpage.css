@@ -1,6 +1,13 @@
-table {
+.welcome {
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+}
+
+.testing {
     margin: 25px;
-    background-color: rgb(240,240,240);
-    font-family: arial, sans-serif;
-    font-size: 14px;
-  }
+    font-family: arial, sans-serif;        
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+}

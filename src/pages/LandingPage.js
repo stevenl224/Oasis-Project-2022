@@ -1,9 +1,13 @@
-// import "../stylesheets/landingpage.css";
+import "../stylesheets/landingpage.css";
 
 function App() {
     return (
     <>
-    <div className = "testing">
+    <div className="welcome">
+        <h1>Welcome Fred</h1>
+    </div>
+
+    <div className="testing">
         <table>
             <tr>
                 <th>Company</th>
