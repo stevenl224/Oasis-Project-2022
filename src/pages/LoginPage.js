@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-
-import "./stylesheets/login-page.css";
+// import ReactDOM from "react-dom";
+import "../stylesheets/loginpage.css";
 
 
 // We need to setup the database to mutable with useState so that when a user creates a new account, it will mutate the database
@@ -19,18 +18,18 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Previous User Login info
-  // const database = [
-  //   {
-  //     username: "user1",
-  //     password: "pass1"
-  //   },
-  //   {
-  //     username: "user2",
-  //     password: "pass2"
-  //   }
-  // ];
+  const database = [
+    {
+      username: "user1",
+      password: "pass1"
+    },
+    {
+      username: "user2",
+      password: "pass2"
+    }
+  ];
 
-  const [database, setDatabase] = useState([]);
+  // const [database, setDatabase] = useState([]);
 
   const errors = {
     uname: "invalid username",
