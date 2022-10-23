@@ -1,0 +1,13 @@
+.welcome {
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+}
+
+.testing {
+    margin: 25px;
+    font-family: arial, sans-serif;        
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+}
