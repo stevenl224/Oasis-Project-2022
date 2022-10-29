@@ -2,6 +2,8 @@ import React, { useState } from "react";
 // import ReactDOM from "react-dom";
 import "../stylesheets/loginpage.css";
 import LandingPage from '../pages/LandingPage.js'
+import CreateAccountPage from '../pages/CreateAccountPage.js'
+import navigation from '../navigation'
 
 
 // We need to setup the database to mutable with useState so that when a user creates a new account, it will mutate the database
@@ -17,6 +19,12 @@ function App() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [createAccount, setCreateAccount] = useState(false);
+
+  const[navigation, setNavigation] = useState("renderForm");
+  const switchToCreateAccount = () => {
+      setNavigation("createAccount");
+  };
 
   // Previous User Login info
   const database = [
@@ -52,7 +60,7 @@ function App() {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        setIsSubmitted(true);
+        setNavigation("landingPage");
       }
     } else {
       // Username not found
@@ -87,18 +95,49 @@ function App() {
               <div className="button-container">
                 <input type="submit" />
               </div>
+
+              <button onClick={switchToCreateAccount}> Create Account </button>
+
+
             </form>
           </div>
         </div>
       </div>
     </div>
   );
+  
+  /*
+  navigation value = "login" "create" "dashboard"
 
-  return (
-    <div>
-        {isSubmitted ? <LandingPage/> : renderForm}
-    </div>
-  );
+  navigation manager 
+    if ("login") ...
+    else if ("create") ...
+    else "dashboard" ...
+
+    login/create
+    dashboard/login-create
+
+    login/create/dashbboard
+
+  login page< ---> create account
+     |               |
+      x -----x-------x
+             |
+             v
+          Dashboard
+
+  */
+
+
+if (navigation === "renderForm") {
+  return <div> {renderForm} </div>
+
+} else if(navigation === "createAccount") {
+  return <CreateAccountPage/>
+} else if(navigation === "landingPage") {
+  return <LandingPage/>
+}
+  
 }
 
 export default App;

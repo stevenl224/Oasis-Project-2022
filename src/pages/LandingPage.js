@@ -10,7 +10,7 @@ function App() {
     <div className="welcome">
         {/* <Header/> */}
     </div>
-    
+ 
     <DataTable/>
     <PieChart/>
     </>
