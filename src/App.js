@@ -1,5 +1,4 @@
 import LoginPage from './pages/LoginPage.js'
-import LandingPage from './pages/LandingPage.js'
 import './stylesheets/app.css';
 
 // This is a small change
