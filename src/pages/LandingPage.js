@@ -7,8 +7,6 @@ function App() {
     <div className="welcome">
         <h1>Welcome Fred</h1>
     </div>
-    
-    <DataTable/>
     </>
     )
 }
