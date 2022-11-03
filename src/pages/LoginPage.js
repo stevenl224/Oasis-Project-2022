@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom";
 import "../stylesheets/loginpage.css";
-import LandingPage from '../pages/LandingPage.js'
-import CreateAccountPage from '../pages/CreateAccountPage.js'
-import navigation from '../navigation'
 
 
 // We need to setup the database to mutable with useState so that when a user creates a new account, it will mutate the database
@@ -15,28 +12,14 @@ import navigation from '../navigation'
 //Have to make a page to create an account info.
 
 
-function App() {
+function LoginPage(props) {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [createAccount, setCreateAccount] = useState(false);
 
-  const[navigation, setNavigation] = useState("renderForm");
   const switchToCreateAccount = () => {
-      setNavigation("createAccount");
+    console.log('THis ran');
+      props.setNavigation("createAccount");
   };
-
-  // Previous User Login info
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
 
   // const [database, setDatabase] = useState([]);
 
@@ -52,7 +35,7 @@ function App() {
     var { uname, pass } = document.forms[0];
 
     // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+    const userData = props.database.find((user) => user.username === uname.value);
 
     // Compare user info
     if (userData) {
@@ -60,7 +43,7 @@ function App() {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        setNavigation("landingPage");
+        props.setNavigation("landingPage");
       }
     } else {
       // Username not found
@@ -96,48 +79,17 @@ function App() {
                 <input type="submit" />
               </div>
 
-              <button onClick={switchToCreateAccount}> Create Account </button>
-
-
+              <div className="submit">
+                <button onClick={switchToCreateAccount}> Create Account </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
   );
-  
-  /*
-  navigation value = "login" "create" "dashboard"
 
-  navigation manager 
-    if ("login") ...
-    else if ("create") ...
-    else "dashboard" ...
-
-    login/create
-    dashboard/login-create
-
-    login/create/dashbboard
-
-  login page< ---> create account
-     |               |
-      x -----x-------x
-             |
-             v
-          Dashboard
-
-  */
-
-
-if (navigation === "renderForm") {
-  return <div> {renderForm} </div>
-
-} else if(navigation === "createAccount") {
-  return <CreateAccountPage/>
-} else if(navigation === "landingPage") {
-  return <LandingPage/>
-}
-  
+  return renderForm
 }
 
-export default App;
+export default LoginPage;

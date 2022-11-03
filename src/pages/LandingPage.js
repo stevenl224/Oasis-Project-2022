@@ -7,7 +7,9 @@ import {TRANSACTIONS} from "../data/data.js"
 function App() {
     return (
     <>
-
+    <div>
+      <header> Hi </header>
+    </div>
     <DataTable transactions = {TRANSACTIONS}/> 
     <PieChart/>
     </>
