@@ -8,10 +8,10 @@ function App() {
     return (
     <>
     <div>
-      <header> Hi </header>
+      <h1>Hi</h1>
     </div>
     <DataTable transactions = {TRANSACTIONS}/> 
-    <PieChart/>
+    <PieChart/> 
     </>
     )
 }
