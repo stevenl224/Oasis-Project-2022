@@ -1,17 +1,14 @@
 import "../stylesheets/landingpage.css";
-import DataTable from "../tables/DataTable.js"
-// import Header from '//Header.js'
+import DataTable from "../tables/datatable.js"
 import PieChart from "../tables/PieChart.js"
+import {TRANSACTIONS} from "../data/data.js"
 
 
 function App() {
     return (
     <>
-    <div className="welcome">
-        {/* <Header/> */}
-    </div>
- 
-    <DataTable/>
+
+    <DataTable transactions = {TRANSACTIONS}/> 
     <PieChart/>
     </>
     )
