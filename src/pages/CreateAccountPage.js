@@ -1,29 +1,30 @@
 import React from 'react';
+import { useState } from 'react';
 import '../stylesheets/createaccountpage.css';
 
 function CreateAccountPage(props) {
-  const [form, setForm] = React.useState({
+
+  const handleForm = (e) => {
+    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value }));
+  };
+  
+  const [inputs, setInputs] = useState({
     username: '',
     password: '',
   });
 
-  const [toggleClass, setToggleClass] = React.useState(false);
-
-  const handleForm = (e) => {
-    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
-  };
-
-  const checkLength = () => {
-    if (form.password.length < 8) {
-      setToggleClass((prevState) => !prevState);
-    }
-  };
-
-
   //fix this
-  const updateDatabase = () => {
-    props.setDatabase([...props.database, form])
+  const updateDatabase = (inputs) => {
+    const x = [...props.database, {username: inputs.username, password: inputs.password} ]
+    console.log(x);
+    props.setDatabase(x)
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('Successfully created a new account!');
+  }
+
 
   const returnToLoginPage = () => {
     props.setNavigation("loginPage");
@@ -33,16 +34,13 @@ function CreateAccountPage(props) {
     
       <section className="form-section">
         <h1 className="heading"> Create your Account! </h1>
-        <form
-          autoComplete="false"
-          action="https://formspree.io/f/meqvlgqr"
-          method="POST"
-        >
+        <form onSubmit={handleSubmit}>
           <div className="input-block">
             <label className="label">
               Username <span className="requiredLabel">*</span>
             </label>
             <input
+              name = "username"
               onChange={handleForm}
               placeholder="user01"
               tabIndex={-1}
@@ -55,11 +53,10 @@ function CreateAccountPage(props) {
             </label>
             <input
               className={`input ${
-                form.password.length < 8 ? 'wrong-input' : 'correct-input'
+                inputs.password.length < 8 ? 'wrong-input' : 'correct-input'
               }`}
               type="password"
               name="password"
-              value={form.password}
               onChange={handleForm}
               minLength="8"
               tabIndex={-1}
@@ -67,7 +64,7 @@ function CreateAccountPage(props) {
             />
           </div>
           <div>
-            {form.password.length < 8 ? (
+            {inputs.password.length < 8 ? (
               <p className="warning-message">
                 Password length should be at least 8 characters
               </p>
@@ -75,21 +72,16 @@ function CreateAccountPage(props) {
               ''
             )}
           </div>
-          <div
-            className={`submit-button-wrapper ${toggleClass ? 'float' : ''}`}
-          >
             <button 
+              type = "submit"
               tabIndex={-1}
               className={`submit-button ${
-                form.password.length > 8 ? 'button-success' : ''
+                inputs.password.length > 8 ? 'button-success' : ''
               }`}
-            //  onClick={updateDatabase, returnToLoginPage}
               onClick={() => {updateDatabase(); returnToLoginPage();}}
-              onMouseEnter={checkLength}
             >
               Submit
             </button>
-          </div>
         </form>
       </section>
     

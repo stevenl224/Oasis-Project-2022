@@ -1,10 +1,16 @@
 import "../stylesheets/landingpage.css";
-import DataTable from "../tables/datatable.js"
-import PieChart from "../tables/PieChart.js"
+import { useState } from "react";  
+import DataTable from "../components/datatable.js"
+import PieChart from "../components/PieChart.js"
+import moneySpent from "../components/moneySpent.js"
 import {TRANSACTIONS} from "../data/data.js"
 
 
-function App() {
+function LandingPage() {
+
+  const[spentSoFar, setSpentSoFar] = useState(200);
+  const[totalToSpend, setTotalToSpend] = useState(400);
+
     return ( 
       <div> 
     <div>
@@ -12,8 +18,11 @@ function App() {
     </div>
     <DataTable transactions = {TRANSACTIONS}/> 
     <PieChart/> 
+    <div><moneySpent spentSoFar={spentSoFar} setSpentSoFar={setSpentSoFar} totalToSpend={totalToSpend} setTotalToSpend={setTotalToSpend}/></div>
+    
+
     </div>
     )
 }
 
-export default App;
+export default LandingPage;

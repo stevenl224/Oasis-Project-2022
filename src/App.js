@@ -9,7 +9,7 @@ function App() {
 
   const[navigation, setNavigation] = useState("loginPage");
 
-  const[database , setDatabase] = useState([ {username: 'admin', password: '123'}]);
+  const[database , setDatabase] = useState([ {username: 'admin', password: '123'}, {username: 'admin2', password: '123123'}]);
   
 
   
