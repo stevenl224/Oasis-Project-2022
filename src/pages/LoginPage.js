@@ -3,25 +3,14 @@ import React, { useState } from "react";
 import "../stylesheets/loginpage.css";
 
 
-// We need to setup the database to mutable with useState so that when a user creates a new account, it will mutate the database
-
-// Need to setup a boolean useState so that the page knows when to go from the login page to the landing page 
-// ---this is more likely to be done more on the landing page. 
-
-
-//Have to make a page to create an account info.
-
-
 function LoginPage(props) {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
 
   const switchToCreateAccount = () => {
-    console.log('THis ran');
       props.setNavigation("createAccount");
   };
 
-  // const [database, setDatabase] = useState([]);
 
   const errors = {
     uname: "invalid username",
@@ -34,7 +23,6 @@ function LoginPage(props) {
 
     var { uname, pass } = document.forms[0];
 
-    // Find user login info
     const userData = props.database.find((user) => user.username === uname.value);
 
     // Compare user info
@@ -79,7 +67,7 @@ function LoginPage(props) {
                 <input type="submit" />
               </div>
 
-              <div className="submit">
+              <div className="create-account-realign">
                 <button onClick={switchToCreateAccount}> Create Account </button>
               </div>
             </form>

@@ -1,10 +1,10 @@
 import "../stylesheets/landingpage.css";
-import DataTable from "../tables/datatable.js"
-import PieChart from "../tables/PieChart.js"
+import DataTable from "../components/datatable.js"
+import PieChart from "../components/PieChart.js"
 import {TRANSACTIONS} from "../data/data.js"
 
 
-function App() {
+function LandingPage() {
     return ( 
       <div> 
     <div>
@@ -16,4 +16,4 @@ function App() {
     )
 }
 
-export default App;
+export default LandingPage;
