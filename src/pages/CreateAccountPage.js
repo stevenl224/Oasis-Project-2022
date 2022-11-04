@@ -30,7 +30,7 @@ function CreateAccountPage(props) {
   }
 
   return (
-    <>
+    
       <section className="form-section">
         <h1 className="heading"> Create your Account! </h1>
         <form
@@ -92,7 +92,7 @@ function CreateAccountPage(props) {
           </div>
         </form>
       </section>
-    </>
+    
   );
 }
 
