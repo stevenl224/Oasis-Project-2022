@@ -4,7 +4,7 @@ import { Pie } from 'react-chartjs-2'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function App() {
+export default function PieChart() {
   return <div>
     <Pie
       data = {{
