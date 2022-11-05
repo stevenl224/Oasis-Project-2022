@@ -4,7 +4,6 @@ import CreateAccountPage from './pages/CreateAccountPage'
 import { useState } from 'react';
 
 
-// This is a small change
 function App() {
 
   const[navigation, setNavigation] = useState("loginPage");
