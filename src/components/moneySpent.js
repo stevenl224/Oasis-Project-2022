@@ -1,19 +1,13 @@
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import '../App.css';
 import React from 'react';
-// import { CircularProgress } from '@mui/material';
-// import { styled } from '@mui/material/styles';
-// import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-// import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
-// import AnimatedExample from './AnimatedExample';
-// import ProgressBarExample from './ProgressBarEx';
  
 // TODO: implement a variable moneyPercent that is computed with money spent / money goal.
 // moneyPercent will be utilized in the Progress Bar percentage as well as the Description of the Bar.
 // Somehow retrieve the information from the log of transactions to
  
-function moneySpent(props) {
+function MoneySpent(props) {
  
     // define value for money spent (using const state)
 
@@ -34,5 +28,5 @@ function moneySpent(props) {
         
 }
  
-export default moneySpent;
+export default MoneySpent;
 

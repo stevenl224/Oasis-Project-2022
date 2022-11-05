@@ -24,6 +24,7 @@ function CreateAccountPage(props) {
     event.preventDefault();
     alert('Successfully created a new account!');
     returnToLoginPage();
+    updateDatabase();
   }
 
 
