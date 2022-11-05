@@ -1,5 +1,5 @@
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import '../App.css';
+import '../stylesheets/app.css';
 import React from 'react';
 import { Box } from '@mui/system';
  
@@ -25,8 +25,6 @@ function MoneySpent(props) {
     );
  
     return progressBar 
-        
 }
- 
 export default MoneySpent;
 
