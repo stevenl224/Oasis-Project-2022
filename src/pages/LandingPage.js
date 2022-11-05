@@ -11,14 +11,14 @@ function LandingPage(props) {
   const[spentSoFar, setSpentSoFar] = useState(200);
   const[totalToSpend, setTotalToSpend] = useState(400);
 
-    return ( 
-      <div> 
+    return (
+      <div>
     <div>
       <h1>Hi</h1>
     </div>
-    <DataTable transactions = {TRANSACTIONS}/> 
-    <PieChart/> 
-    <MoneySpent spentSoFar={spentSoFar} setSpentSoFar={setSpentSoFar} totalToSpend={totalToSpend} setTotalToSpend={setTotalToSpend}/>
+ <DataTable transactions = {TRANSACTIONS}/>
+    <PieChart/>
+    <div><moneySpent spentSoFar={spentSoFar} setSpentSoFar={setSpentSoFar} totalToSpend={totalToSpend} setTotalToSpend={setTotalToSpend}/></div>
     
 
     </div>
