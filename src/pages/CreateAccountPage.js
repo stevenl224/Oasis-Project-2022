@@ -23,6 +23,8 @@ function CreateAccountPage(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     alert('Successfully created a new account!');
+    returnToLoginPage();
+    updateDatabase();
   }
 
 
@@ -78,7 +80,7 @@ function CreateAccountPage(props) {
               className={`submit-button ${
                 inputs.password.length > 8 ? 'button-success' : ''
               }`}
-              onClick={() => {updateDatabase(); returnToLoginPage();}}
+              // onClick={() => {updateDatabase(); returnToLoginPage();}}
             >
               Submit
             </button>
