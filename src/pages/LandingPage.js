@@ -18,6 +18,8 @@ function LandingPage() {
     </div>
     <DataTable transactions = {TRANSACTIONS}/> 
     <PieChart/> 
+    {/* {moneySpent(spentSoFar)}  */}
+    
     <div><moneySpent spentSoFar={spentSoFar} setSpentSoFar={setSpentSoFar} totalToSpend={totalToSpend} setTotalToSpend={setTotalToSpend}/></div>
     
 

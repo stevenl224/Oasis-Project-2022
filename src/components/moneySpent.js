@@ -16,17 +16,22 @@ import { Box } from '@mui/system';
 function moneySpent(props) {
  
     // define value for money spent (using const state)
- 
-    return (
-        <Box>
-            <h1>Amount of Money Spent</h1>
+
+    const progressBar = (
+        <div>
             <Box>
-                <ProgressBar now={props.spentSoFar / props.totalToSpend * 100}/>
-                <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
+                <h1>Amount of Money Spent</h1>
+                <Box>
+                    <ProgressBar now={props.spentSoFar / props.totalToSpend * 100}/>
+                    <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
+                </Box>
+                <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
             </Box>
-            <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
-        </Box>
-    )
+        </div>
+    );
+ 
+    return progressBar 
+        
 }
  
 export default moneySpent;
