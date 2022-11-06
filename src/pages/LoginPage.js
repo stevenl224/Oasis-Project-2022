@@ -23,7 +23,7 @@ function LoginPage(props) {
     var { uname, pass } = document.forms[0];
 
     const userData = props.database.find((user) => user.username === uname.value);
-
+    console.log(userData)
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
@@ -31,6 +31,8 @@ function LoginPage(props) {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         props.setNavigation("landingPage");
+        props.setUser({ username: userData.username , budget: userData.budget})
+        // console.log(props.user)
       }
     } else {
       // Username not found

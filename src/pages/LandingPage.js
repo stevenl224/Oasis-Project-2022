@@ -8,13 +8,14 @@ import {TRANSACTIONS} from "../data/data.js"
 
 function LandingPage(props) {
 
-  const[spentSoFar, setSpentSoFar] = useState(200);
-  const[totalToSpend, setTotalToSpend] = useState(400);
+  const[spentSoFar, setSpentSoFar] = useState(600);
+  //need to pass in a user so we can take the name and budget out.
+  const budget = props.budget;
 
     return ( 
       <body>
         <div className='greeting'>
-          Hello, user.
+          Hello, {props.user.username}.
         </div>
         <div className='stuff'>
           <h2>Here are your transactions for the week.</h2>
@@ -27,8 +28,8 @@ function LandingPage(props) {
         </div>
         <div className = 'progress'><MoneySpent spentSoFar={spentSoFar}
           setSpentSoFar={setSpentSoFar} 
-          totalToSpend={totalToSpend}
-          setTotalToSpend={setTotalToSpend}/>
+          budget={props.user.budget}  
+          />
         </div>
         </body>
     )

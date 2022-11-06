@@ -15,11 +15,8 @@ function CreateAccountPage(props) {
   });
 
   const updateDatabase = () => {
-    console.log(inputs);
     const before = props.database;
     before.push({username: inputs.username, password: inputs.password, budget: inputs.budget});
-
-    console.log(before);
     props.setDatabase(before)
   }
 
