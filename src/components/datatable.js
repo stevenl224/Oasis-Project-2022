@@ -1,6 +1,7 @@
 import '../stylesheets/datatable.css';
 
-const TransactionRow = ({ transaction }) => {
+
+function TransactionRow({ transaction }) {
     return (
         <tr>
             <td> {transaction.date} </td>
@@ -11,7 +12,7 @@ const TransactionRow = ({ transaction }) => {
     );
 };
 
-const Table = ({ transactions }) => {
+function Table({ transactions }){
   const headers = ["Date", "Description", "Category", "Amount ($)"];
   return (
     <table>

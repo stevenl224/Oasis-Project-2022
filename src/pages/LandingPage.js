@@ -11,12 +11,13 @@ function LandingPage(props) {
   const[spentSoFar, setSpentSoFar] = useState(200);
   const[totalToSpend, setTotalToSpend] = useState(400);
 
-      //  <div className = 'transactions'> </div>
     return ( 
       <body>
         <div className='greeting'>
-          <h1>Hello, user.</h1>
-          <h2>Here are your transactions for the day.</h2>
+          Hello, user.
+        </div>
+        <div className='stuff'>
+          <h2>Here are your transactions for the week.</h2>
         </div>
          <div className = 'transactions'> 
           <DataTable transactions = {TRANSACTIONS}/> 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box } from '@mui/system';
 import '../stylesheets/moneyspent.css'
  
 // TODO: implement a variable moneyPercent that is computed with money spent / money goal.
@@ -8,27 +7,24 @@ import '../stylesheets/moneyspent.css'
  
 function MoneySpent(props) {
  
-    // define value for money spent (using const state)
-
     return (
-        <html>
-            <div className="progress-bar-box">
-                <h1>Amount of Money Spent</h1>
-                    <div className="line">
-                        <hr/>
-                    </div>
-                    <div className="progress-bar">
-                        <progress value={props.spentSoFar / props.totalToSpend * 100} max='100' width='500px'/>
-                    </div> 
-                    <td>
-                     { <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p> }
-                    </td>
-                    <td>
-                    <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
-                    </td>
+            <div className="realign-top-bottom">
+                <div className="line">   
+                    <hr/>
+                </div>
 
+                    <div className="progress-bar">
+                        <progress value={props.spentSoFar / props.totalToSpend * 100} max='100' />
+                    </div> 
+                    <div className="realign-table">
+                        <td>
+                        <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
+                        </td>
+                        <td>
+                        <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
+                        </td>
+                    </div>
             </div>
-        </html>
         
     );
 }
