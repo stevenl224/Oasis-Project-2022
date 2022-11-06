@@ -11,13 +11,16 @@ function CreateAccountPage(props) {
   const [inputs, setInputs] = useState({
     username: '',
     password: '',
+    budget: '',
   });
 
-  //fix this
-  const updateDatabase = (inputs) => {
-    const x = [...props.database, {username: inputs.username, password: inputs.password} ]
-    console.log(x);
-    props.setDatabase(x)
+  const updateDatabase = () => {
+    console.log(inputs);
+    const before = props.database;
+    before.push({username: inputs.username, password: inputs.password, budget: inputs.budget});
+
+    console.log(before);
+    props.setDatabase(before)
   }
 
   const handleSubmit = (event) => {
@@ -33,7 +36,7 @@ function CreateAccountPage(props) {
   }
 
   return (
-    
+    <html>
       <section className="form-section">
         <h1 className="heading"> Create your Account! </h1>
         <form onSubmit={handleSubmit}>
@@ -74,18 +77,31 @@ function CreateAccountPage(props) {
               ''
             )}
           </div>
-            <button 
+          <div className="input-block">
+            <label className="label">
+              Budget Amount: <span className="requiredLabel">*</span>
+            </label>
+            <input
+              name = "budget"
+              onChange={handleForm}
+              placeholder="100"
+              tabIndex={-1}
+              required
+            />
+          </div>
+            <input 
               type = "submit"
+              value = "Submit"
               tabIndex={-1}
               className={`submit-button ${
                 inputs.password.length > 8 ? 'button-success' : ''
               }`}
               // onClick={() => {updateDatabase(); returnToLoginPage();}}
             >
-              Submit
-            </button>
+            </input>
         </form>
       </section>
+      </html>
     
   );
 }

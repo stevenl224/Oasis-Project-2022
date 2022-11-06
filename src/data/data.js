@@ -1,12 +1,3 @@
-import React from "react";
-
-// export interface Transaction {
-//   date: string;
-//   description: string;
-//   category: "Shopping" | "Groceries";
-//   amount: number;
-// }
-
 export const TRANSACTIONS = [
   {
     date: "9/8/20",
@@ -75,10 +66,4 @@ export const TRANSACTIONS = [
     category: "Food",
     amount: 11.21,
   },
- {
-    date: "9/10/22",
-    description: "shawarma",
-    category: "Food",
-    amount: 11.21,
-  }
 ];

@@ -13,7 +13,13 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont,
 align-items: left;
 justify-content: left;
 text-align: left;
+font-size: 50px;
+margin-left: 50px;
+}
 
+.stuff {
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
 .transactions {
@@ -36,7 +42,9 @@ left: 50%;
 }
 
 .progress {
-     margin-left: 50px;
+    
+margin-left: 50px;
+margin-bottom: 20px;
 }
 
 .testing {

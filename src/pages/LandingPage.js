@@ -15,7 +15,9 @@ function LandingPage(props) {
     return ( 
       <body>
         <div className='greeting'>
-          <h1>Hello, user.</h1>
+          Hello, user.
+        </div>
+        <div className='stuff'>
           <h2>Here are your transactions for the day.</h2>
         </div>
          <div className = 'transactions'> 
