@@ -11,14 +11,15 @@ function App() {
   const[database , setDatabase] = useState([ {username: 'admin', password: '123', budget: 1000}, 
   {username: 'admin2', password: '123123', budget: 500}]);
   
+  const[user, setUser] = useState({username: '', budget: NaN });
 
   
 if (navigation === "loginPage") {
-  return <LoginPage navigation={navigation} setNavigation={setNavigation} database={database} setDatabase={setDatabase}/>
+  return <LoginPage navigation={navigation} setNavigation={setNavigation} database={database} setDatabase={setDatabase} user={user} setUser={setUser}/>
 } else if(navigation === "createAccount") {
   return <CreateAccountPage navigation={navigation} setNavigation={setNavigation} database={database} setDatabase={setDatabase}/>
 } else if(navigation === "landingPage") {
-  return <LandingPage navigation={navigation} setNavigation={setNavigation}/>
+  return <LandingPage navigation={navigation} setNavigation={setNavigation} user={user}/>
 }
   
 }

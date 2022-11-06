@@ -14,14 +14,14 @@ function MoneySpent(props) {
                 </div>
 
                     <div className="progress-bar">
-                        <progress value={props.spentSoFar / props.totalToSpend * 100} max='100' />
+                        <progress value={props.spentSoFar / props.budget * 100} max='100' />
                     </div> 
                     <div className="realign-table">
                         <td>
-                        <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
+                        <p>You have spent {props.spentSoFar / props.budget * 100}% of your money goal so far.</p>
                         </td>
                         <td>
-                        <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
+                        <p>You have ${props.budget - props.spentSoFar} left to spend this month.</p>
                         </td>
                     </div>
             </div>
