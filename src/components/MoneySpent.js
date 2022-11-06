@@ -7,27 +7,24 @@ import '../stylesheets/moneyspent.css'
  
 function MoneySpent(props) {
  
-    // define value for money spent (using const state)
- // style={{'width':'2000px'}}
     return (
-        //<html>
-            <div>
-                <h1>Amount of Money Spent</h1>
-                    <div className="line">
-                        <hr/>
-                    </div>
+            <div className="realign-top-bottom">
+                <div className="line">   
+                    <hr/>
+                </div>
+
                     <div className="progress-bar">
                         <progress value={props.spentSoFar / props.totalToSpend * 100} max='100' />
                     </div> 
-                    {/* <td> */}
-                      <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
-                    {/* </td> */}
-                    {/* <td> */}
-                    <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
-                    {/* </td> */}
-
+                    <div className="realign-table">
+                        <td>
+                        <p>You have spent {props.spentSoFar / props.totalToSpend * 100}% of your money goal so far.</p>
+                        </td>
+                        <td>
+                        <p>You have ${props.totalToSpend - props.spentSoFar} left to spend this month.</p>
+                        </td>
+                    </div>
             </div>
-        //</html>
         
     );
 }

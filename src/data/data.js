@@ -66,4 +66,10 @@ export const TRANSACTIONS = [
     category: "Food",
     amount: 11.21,
   },
+  {
+    date: "9/10/22",
+    description: "shawarma",
+    category: "Food",
+    amount: 11.21,
+  }
 ];

@@ -1,22 +1,16 @@
-.progress-bar-box {
-    /* margin-left: 50px; */
-    /* margin-top: 50px; */
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-}
-
 .line {
     height:2px;
     border-width:0;
     color:gray;
-    background-color:gray
+    background-color:gray;
+    margin-bottom: 1%;
 }
 
 .progress-bar {
     height: 1.5rem;
     text-align: center;
     color: white;
-
+    transform: scale(10, 3);
 }
 
 td, th {
@@ -24,3 +18,11 @@ td, th {
     text-align: left;
     padding: 8px;
   }
+
+.realign-table {
+    margin-left: 30%;
+}
+
+.realign-top-bottom {
+    margin-top: 2%;
+}
