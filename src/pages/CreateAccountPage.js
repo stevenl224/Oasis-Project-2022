@@ -5,7 +5,7 @@ import '../stylesheets/createaccountpage.css';
 function CreateAccountPage(props) {
 
   const handleForm = (e) => {
-    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value }));
+    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value }))
   };
   
   const [inputs, setInputs] = useState({
@@ -16,20 +16,20 @@ function CreateAccountPage(props) {
 
   const updateDatabase = () => {
     const before = props.database;
-    before.push({username: inputs.username, password: inputs.password, budget: inputs.budget});
+    before.push({username: inputs.username, password: inputs.password, budget: inputs.budget})
     props.setDatabase(before)
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    alert('Successfully created a new account!');
-    returnToLoginPage();
-    updateDatabase();
+    event.preventDefault()
+    alert('Successfully created a new account!')
+    returnToLoginPage()
+    updateDatabase()
   }
 
 
   const returnToLoginPage = () => {
-    props.setNavigation("loginPage");
+    props.setNavigation("loginPage")
   }
 
   return (
@@ -93,9 +93,7 @@ function CreateAccountPage(props) {
               className={`submit-button ${
                 inputs.password.length > 8 ? 'button-success' : ''
               }`}
-              // onClick={() => {updateDatabase(); returnToLoginPage();}}
-            >
-            </input>
+            />
         </form>
       </section>
       </html>

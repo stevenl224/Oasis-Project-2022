@@ -54,3 +54,8 @@ align-items: left;
 justify-content: left;
 text-align: left;
 }
+
+.addEntry-button {
+margin-top: 19%;
+margin-left: 5%;
+}

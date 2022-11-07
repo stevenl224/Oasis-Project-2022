@@ -1,6 +1,4 @@
 import '../stylesheets/datatable.css';
-import Form from '../components/AddEntry.js';
-
 
 function TransactionRow({ transaction }) {
     return (
@@ -14,6 +12,7 @@ function TransactionRow({ transaction }) {
 };
 
 function Table({ transactions }){
+
   const headers = ["Date", "Description", "Category", "Amount ($)"];
   return (
     <>
@@ -31,7 +30,6 @@ function Table({ transactions }){
           ))}
         </tbody>
       </table>
-      <Form/>
     </>
   );
 };

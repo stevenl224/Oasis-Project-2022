@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title} from 'chart.js';
 import { Pie } from 'react-chartjs-2'
 import '../data/data.js'
-import { TRANSACTIONS } from '../data/data.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-export default function App() {
+export default function App(props) {
 
   const [group, setGroup]= useState();
   const [money, setMoney]= useState();
@@ -14,7 +13,7 @@ export default function App() {
     const getCategory= [];
     const getMoney= [];
     const getData = async()=>{
-      const receivedData= TRANSACTIONS;
+      const receivedData= props.transactions;
       console.log(receivedData)
       for(let i=0; i<receivedData.length; i++)
       {
