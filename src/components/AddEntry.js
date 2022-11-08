@@ -31,6 +31,7 @@ function AddEntry(props) {
                     category: inputs.category, 
                     amount: inputs.amount})
         props.setTransactions(before)
+        props.setSpentSoFar()
         console.log(props.transactions)
     }
     const handleSubmit = (event) => {
