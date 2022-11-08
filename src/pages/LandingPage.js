@@ -51,12 +51,12 @@ function LandingPage(props) {
       category: "Food",
       amount: 11.21,
     },
-    {
-      date: "10/15/23",
-      description: "this worked",
-      category: "Rent",
-      amount: 500,
-    }
+    // {
+    //   date: "10/15/23",
+    //   description: "this worked",
+    //   category: "Rent",
+    //   amount: 500,
+    // }
   ])
   
   const sumTotalSpending = transactions.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
