@@ -8,10 +8,10 @@ function App() {
 
   const[navigation, setNavigation] = useState("loginPage");
 
-  const[database , setDatabase] = useState([ {username: 'admin', password: '123', budget: 1000}, 
-  {username: 'admin2', password: '123123', budget: 500}]);
+  const[database , setDatabase] = useState([ {username: 'admin', password: '123', name: 'Alex', budget: 1000}, 
+  {username: 'admin2', password: '123123', name: 'Joe', budget: 500}]);
   
-  const[user, setUser] = useState({username: '', budget: NaN });
+  const[user, setUser] = useState({username: '', firstName: '', budget: NaN });
 
   
 if (navigation === "loginPage") {

@@ -31,8 +31,7 @@ function LoginPage(props) {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         props.setNavigation("landingPage");
-        props.setUser({ username: userData.username , budget: userData.budget})
-        // console.log(props.user)
+        props.setUser({ username: userData.username , firstName: userData.firstName, budget: userData.budget})
       }
     } else {
       // Username not found
