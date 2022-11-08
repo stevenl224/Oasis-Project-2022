@@ -60,7 +60,7 @@ function LandingPage(props) {
       <body>
 
         <div className='greeting'>
-          Hello, {props.user.username}.
+          Hello, {props.user.firstName}.
         </div>
 
         <div className='stuff'>
@@ -73,7 +73,6 @@ function LandingPage(props) {
           />
         </div>
         
-
         <div className = 'transactions'> 
           <DataTable transactions={transactions} setTransactions={setTransactions}/> 
         </div>

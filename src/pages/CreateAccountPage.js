@@ -11,12 +11,13 @@ function CreateAccountPage(props) {
   const [inputs, setInputs] = useState({
     username: '',
     password: '',
+    firstName: '',
     budget: '',
   });
 
   const updateDatabase = () => {
     const before = props.database;
-    before.push({username: inputs.username, password: inputs.password, budget: inputs.budget})
+    before.push({username: inputs.username, password: inputs.password, firstName: inputs.firstName, budget: inputs.budget})
     props.setDatabase(before)
   }
 
@@ -49,6 +50,7 @@ function CreateAccountPage(props) {
               required
             />
           </div>
+
           <div className="input-block">
             <label className="label">
               Password <span className="requiredLabel">*</span>
@@ -65,6 +67,7 @@ function CreateAccountPage(props) {
               required
             />
           </div>
+
           <div>
             {inputs.password.length < 8 ? (
               <p className="warning-message">
@@ -74,6 +77,20 @@ function CreateAccountPage(props) {
               ''
             )}
           </div>
+
+          <div className="input-block">
+            <label className="label">
+              First Name: <span className="requiredLabel">*</span>
+            </label>
+            <input
+              name = "firstName"
+              onChange={handleForm}
+              placeholder="Bob"
+              tabIndex={-1}
+              required
+            />
+          </div>
+
           <div className="input-block">
             <label className="label">
               Budget Amount: <span className="requiredLabel">*</span>
@@ -86,6 +103,7 @@ function CreateAccountPage(props) {
               required
             />
           </div>
+
             <input 
               type = "submit"
               value = "Submit"

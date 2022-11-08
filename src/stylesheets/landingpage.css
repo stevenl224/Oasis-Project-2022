@@ -56,6 +56,6 @@ text-align: left;
 }
 
 .addEntry-button {
-margin-top: 19%;
-margin-left: 5%;
+margin-top: -10%; /*set to 19%*/
+margin-left: 0%; /*set to 5% when done */
 }
