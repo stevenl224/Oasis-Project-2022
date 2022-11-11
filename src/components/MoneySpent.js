@@ -8,26 +8,6 @@ function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 } 
 
-// To conditionally change the color of the bar based on the values inputted.
-function changeColor() {
-// To conditionally change the color of the bar based on the values inputted.
-function changeColor(value) {
-    if (0 <= value < 50) {
-        // green
-        return("green");
-    } else if (50 <= value < 75) {
-        // yellow
-        return("yellow");
-    } else {
-        return("red");
-    }
-}
-}
-
-// className={`input ${
-//     inputs.password.length < 8 ? 'wrong-input' : 'correct-input'
-//   }`}
-
 // To represent the HTML progress bar in our project
 function MoneySpent(props) {
  var spentValue = props.spentSoFar / props.budget * 100;
