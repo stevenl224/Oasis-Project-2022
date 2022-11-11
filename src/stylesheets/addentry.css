@@ -1,0 +1,11 @@
+.addform label {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.addform {
+    width: 15%;
+    border-radius: 5px;
+    padding: 20px;
+}

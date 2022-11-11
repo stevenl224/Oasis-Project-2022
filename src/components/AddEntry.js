@@ -1,6 +1,7 @@
 import { inputUnstyledClasses } from "@mui/base";
 import React from "react";
 import { useState } from 'react'
+import '../stylesheets/addentry.css';
 
 // create state for 'showForm'
 // button toggles state
@@ -52,6 +53,7 @@ function AddEntry(props) {
     } else {
         return (
             <>
+            <div class="addform">
                 <form onSubmit={handleSubmit}>
                     <label for="date">Date</label>
                         <input
@@ -91,6 +93,7 @@ function AddEntry(props) {
                     />
                     <button onClick={onButtonClick}>Cancel</button>
                 </form>
+            </div>
             </>
         )
     }
