@@ -10,7 +10,27 @@
     height: 1.5rem;
     text-align: center;
     color: white;
-    transform: scale(10, 3);
+    transform: scale(3.5, 1); 
+}
+
+.lavender {
+    accent-color: #967BB6;
+}
+
+.green {
+    accent-color: #4C906B;
+}
+
+.red {
+    accent-color: red;
+}
+
+.yellow {
+    accent-color: #fff200;
+}
+
+.mint {
+    accent-color: #98ff98;
 }
 
 td, th {
